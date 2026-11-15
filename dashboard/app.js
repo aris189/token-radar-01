@@ -121,13 +121,13 @@
     if (c.indexOf('bridge') >= 0 || c.indexOf('cross chain') >= 0)
       return 'Bridge $' + capital + ' of USDC to ' + chain + ' through ' + name + ' and use the bridged funds in its app.';
     if (c.indexOf('dex') >= 0 || c.indexOf('amm') >= 0)
-      return 'Provide $' + capital + " of liquidity to " + name + "'s main pool on " + chain + ' and keep the position open.';
+      return 'Provide $' + capital + " of liquidity to a pool on " + name + " on " + chain + ' and keep the position open.';
     if (c.indexOf('rwa') >= 0)
       return 'Mint $' + capital + " of the protocol's yield-bearing asset on " + chain + ' and hold it.';
     if (c.indexOf('lend') >= 0 || c.indexOf('cdp') >= 0 || c.indexOf('collateral') >= 0)
       return 'Supply $' + capital + ' of USDC to ' + name + ' on ' + chain + ' and keep the position open.';
     if (c.indexOf('yield') >= 0 || c.indexOf('farm') >= 0 || c.indexOf('leveraged') >= 0)
-      return 'Deposit $' + capital + " into " + name + "'s main yield pool on " + chain + ' and keep the position open.';
+      return 'Deposit $' + capital + " into a yield pool on " + name + " on " + chain + ' and keep the position open.';
     if (c.indexOf('derivative') >= 0 || c.indexOf('perpetual') >= 0 || c.indexOf('interest rate') >= 0)
       return 'Deposit $' + capital + ' of USDC as margin on ' + name + ' and open one small hedge.';
     if (c.indexOf('basis') >= 0)
@@ -469,6 +469,7 @@
     ));
     dialog.appendChild(el('section', { class: 'detail-section' },
       el('h3', { text: 'Farm plan' }),
+      el('p', { class: 'sub', text: 'Farm plans are estimates from the snapshot\'s category, chains, TVL and age; costs are illustrative. Verify the pool, fees and rewards on the protocol\'s own docs before you act.' }),
       el('ol', { class: 'steps' }, steps.map(function (s) {
         var at = s.indexOf(' Cost: ');
         var action = at >= 0 ? s.slice(0, at) : s;

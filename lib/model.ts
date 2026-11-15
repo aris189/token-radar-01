@@ -411,13 +411,13 @@ function actionFor(p: SnapshotProtocol, capital: number, chain: string): string 
   if (c.includes('bridge') || c.includes('cross chain'))
     return `Bridge $${capital} of USDC to ${chain} through ${name} and use the bridged funds in its app.`;
   if (c.includes('dex') || c.includes('amm'))
-    return `Provide $${capital} of liquidity to ${name}'s main pool on ${chain} and keep the position open.`;
+    return `Provide $${capital} of liquidity to a pool on ${name} on ${chain} and keep the position open.`;
   if (c.includes('rwa'))
     return `Mint $${capital} of the protocol's yield-bearing asset on ${chain} and hold it.`;
   if (c.includes('lend') || c.includes('cdp') || c.includes('collateral'))
     return `Supply $${capital} of USDC to ${name} on ${chain} and keep the position open.`;
   if (c.includes('yield') || c.includes('farm') || c.includes('leveraged'))
-    return `Deposit $${capital} into ${name}'s main yield pool on ${chain} and keep the position open.`;
+    return `Deposit $${capital} into a yield pool on ${name} on ${chain} and keep the position open.`;
   if (c.includes('derivative') || c.includes('perpetual') || c.includes('interest rate'))
     return `Deposit $${capital} of USDC as margin on ${name} and open one small hedge.`;
   if (c.includes('basis'))
